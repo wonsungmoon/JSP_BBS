@@ -24,15 +24,14 @@ public class UserDAO {
 	}
 	
 	public int login(String userID, String userPassword) {
-		String SQL = "SELECT userPassword FROM USER WHERE user = ?";
+		String SQL = "SELECT userPassword FROM USER WHERE userID = ?";
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, userID);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
-				if (rs.getString(1).equals(userPassword)) {
+				if (rs.getString(1).equals(userPassword))
 					return 1; //로그인 성공
-				}
 				else 
 					return 0; //비밀번호 불일치
 			}
