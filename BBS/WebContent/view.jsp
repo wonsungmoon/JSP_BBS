@@ -26,7 +26,7 @@
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("유효하지 않은 글입니다.')");
-			script.println("location.href = 'bbs.jsp");
+			script.println("location.href = 'bbs.jsp'");
 			script.println("</script>");
 		}
 		Bbs bbs = new BbsDAO().getBbs(bbsID);
